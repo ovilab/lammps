@@ -35,6 +35,8 @@ class FixAveChunk : public Fix {
   void end_of_step();
   double compute_array(int,int);
   double memory_usage();
+  bigint nextvalid();
+  void *extract(const char *, int &);
 
  private:
   int me,nvalues;
@@ -71,7 +73,6 @@ class FixAveChunk : public Fix {
   double **values_total,***values_list;
 
   void allocate();
-  bigint nextvalid();
 };
 
 }

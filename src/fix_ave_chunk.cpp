@@ -1104,6 +1104,15 @@ bigint FixAveChunk::nextvalid()
   return nvalid;
 }
 
+void *FixAveChunk::extract(const char *str, int &dim) {
+  dim = 1;
+  if (strcmp(str,"cchunk") == 0) return (void *) cchunk;
+  if (strcmp(str,"nvalues") == 0) return (void *) &nvalues;
+  if (strcmp(str,"nchunk") == 0) return (void *) &nchunk;
+  if (strcmp(str,"colextra") == 0) return (void *) &colextra;
+  return NULL;
+}
+
 /* ----------------------------------------------------------------------
    memory usage of varatom and bins
 ------------------------------------------------------------------------- */
