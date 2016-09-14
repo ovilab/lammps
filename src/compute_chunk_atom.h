@@ -46,7 +46,7 @@ class ComputeChunkAtom : public Compute {
   void unlock(class Fix *);
   int setup_chunks();
   void compute_ichunk();
-
+  void *extract(const char *, int &);
  private:
   int which,binflag;
   int regionflag,nchunksetflag,nchunkflag,discard;
