@@ -33,7 +33,7 @@ using namespace FixConst;
 
 #define DELTA 4
 #define BIG 1.0e20
-#define NEXCEPT 7       // change when add to exceptions in add_fix()
+#define NEXCEPT 8       // change when add to exceptions in add_fix()
 
 /* ---------------------------------------------------------------------- */
 
@@ -747,7 +747,7 @@ void Modify::add_fix(int narg, char **arg, int trysuffix)
   // MUST change NEXCEPT above when add new fix to this list
 
   const char *exceptions[NEXCEPT] =
-    {"GPU","OMP","INTEL","property/atom","cmap","cmap3","rx"};
+    {"GPU","OMP","INTEL","property/atom","cmap","cmap3","rx", "atomify"};
 
   if (domain->box_exist == 0) {
     int m;

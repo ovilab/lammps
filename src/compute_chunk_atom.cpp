@@ -1992,6 +1992,15 @@ void ComputeChunkAtom::set_arrays(int i)
   vstore[i] = 0.0;
 }
 
+void *ComputeChunkAtom::extract(const char *str, int &dimension) {
+  dimension = 1;
+  if (strcmp(str,"which") == 0) return (void *) &which;
+  dimension = 3;
+  if (strcmp(str,"dim") == 0) return (void *) dim;
+  if (strcmp(str,"nlayers") == 0) return (void *) nlayers;
+  return NULL;
+}
+
 /* ----------------------------------------------------------------------
    memory usage of local atom-based arrays and per-chunk arrays
    note: nchunk is actually 0 until first call
