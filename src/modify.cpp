@@ -987,12 +987,7 @@ void Modify::delete_fix(const char *id)
 
 void Modify::delete_fix(int ifix)
 {
-<<<<<<< HEAD
   if (fix[ifix]) delete fix[ifix];
-=======
-  if(fix[ifix])
-    delete fix[ifix];
->>>>>>> 6147d42c505a5e42d13c8ca7f14e3ac55740c9a9
   atom->update_callback(ifix);
 
   // move other Fixes and fmask down in list one slot
