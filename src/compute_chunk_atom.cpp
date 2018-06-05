@@ -1993,6 +1993,8 @@ void *ComputeChunkAtom::extract(const char *str, int &dimension) {
   dimension = 0;
   if (strcmp(str,"which") == 0) return (void *) &which;
   if (strcmp(str,"dim") == 0) return (void *) dim;
+  if (strcmp(str,"ncplane") == 0) return (void *) &ncplane;
+  if (strcmp(str,"compress") == 0) return (void *) &compress;
 
   dimension = 1;
   if (strcmp(str,"nlayers") == 0) return (void *) nlayers;
